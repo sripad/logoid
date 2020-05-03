@@ -1,9 +1,10 @@
 import { Message, LogLevel } from "../types";
-import { BroadcastLog, BroadcastWatchOption } from "./broadcast-log";
-import { HttpRequest, HttpClient } from "../utils/http-client";
+import { BroadcastLog } from "./broadcast-log";
+import { HttpRequest } from "../utils/http-client";
 
 export type BroadcastRestApiOption = {
   httpRequest: HttpRequest;
+  httpBroadCast(HttpRequest: HttpRequest): void;
   watch: LogLevel[];
 };
 
@@ -14,13 +15,11 @@ export class BroadcastLogRestApi extends BroadcastLog {
 
   public log(logLevel: LogLevel, messages: Message | Message[]): void {
     if (this.isWatchable(logLevel, this.option.watch)) {
-      const request: HttpRequest = {
+      this.option.httpBroadCast({
         url: this.option.httpRequest.url,
         method: this.option.httpRequest.method,
         payload: JSON.stringify(messages)
-      };
-      const httpClient = new HttpClient();
-      httpClient.send(request);
+      });
     }
   }
 }

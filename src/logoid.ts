@@ -50,7 +50,7 @@ export class Logoid {
     }
   }
 
-  public log(message: string, data?: any) {
+  public info(message: string, data?: any) {
     console.log(message, data);
   }
 }

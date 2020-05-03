@@ -1,8 +1,8 @@
 {
-  "name": "logiod",
-  "version": "1.0.0",
+  "name": "logoid",
+  "version": "0.0.4",
   "description": "Comprehensive typescript logging library",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
@@ -11,7 +11,8 @@
     "start:dev": "webpack-dev-server"
   },
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "jest": {
     "moduleFileExtensions": [
@@ -32,10 +33,7 @@
     "Log",
     "Watcher"
   ],
-  "author": {
-    "name": "Sripad",
-    "email": "iamsripad@gmail.com"
-  },
+  "author": "Sripad <iamsripad@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sripad/logoid/issues"
@@ -50,5 +48,11 @@
     "tslint": "^6.1.0",
     "typescript": "^3.8.3",
     "webpack-dev-server": "^3.10.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "np": "^6.2.3"
   }
 }

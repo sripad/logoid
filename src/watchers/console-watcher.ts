@@ -25,7 +25,7 @@ class ConsoleWatcher implements Watcher {
           for (const broadcast of that.broadcasts) {
             broadcast.log(name as LogLevel, data);
           }
-          return originalFn.apply(consoleObj, arguments);
+          return originalFn.apply(consoleObj, messages);
         };
       });
     });
