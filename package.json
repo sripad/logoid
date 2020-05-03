@@ -1,0 +1,54 @@
+{
+  "name": "logiod",
+  "version": "1.0.0",
+  "description": "Comprehensive typescript logging library",
+  "main": "index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint --fix --project . ",
+    "start:dev": "webpack-dev-server"
+  },
+  "files": [
+    "src"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/src/.*\\.spec\\.ts$"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sripad/logoid.git"
+  },
+  "keywords": [
+    "Typescript",
+    "Log",
+    "Watcher"
+  ],
+  "author": {
+    "name": "Sripad",
+    "email": "iamsripad@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sripad/logoid/issues"
+  },
+  "homepage": "https://github.com/sripad/logoid#readme",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.3",
+    "jest": "^25.1.0",
+    "prettier": "^2.0.1",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

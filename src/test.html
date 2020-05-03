@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	
+    <title>Typescript Starter</title>
+	  <meta name="description" content="Typescript Starter">
+	  <meta name="author" content="https://github.com/nea">
+  </head>
+  <body>
+      <script src="index.js"></script>
+      <script>
+            var log = new Logoid();
+            log.installBroadcasts({
+                broadCastRestApi: {
+                    httpRequest: {
+                        url: 'http://localhost:4200/api',
+                        method: 'POST'
+                    },
+                    watch: [LogLevel.ERROR]
+                },
+                broadcastIndexedDb: {
+                    watch: [LogLevel.INFO, LogLevel.ERROR]
+                }
+            })
+            log.log('welcome to logoid');
+            try{
+                log.error('error message', new Error('custom error'));
+            // tslint:disable-next-line: no-empty
+            } catch(e){
+                //
+            }
+      </script>
+  </body>
+</html>
